@@ -1,0 +1,26 @@
+#This the program that reversed a string
+s = "my name is  sudh"
+reversedString = []
+temp = str()
+l = len(s)
+counter = 0
+for i in reversed(s):
+    if counter is l:
+        reversedString.append(temp[::-1])
+        break
+    if i.isspace():
+        reversedString.append(temp[::-1])
+        temp = str()
+        counter = counter + 1
+        if counter is l:
+            reversedString.append(temp[::-1])
+            break
+        continue
+    else:
+        temp = temp + i
+        counter = counter + 1
+        if counter is l:
+            reversedString.append(temp[::-1])
+            break
+reversedString.remove('')
+print(*reversedString)
